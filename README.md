@@ -11,7 +11,6 @@ End-to-end SQL analysis of a retail banking dataset in Oracle: data audit, clean
 | `account_transaction` | 2,377,169 | Debit and credit transactions |
 | `transaction_code` | 15 | Transaction code reference |
 
-Source: [dataset name and link]. The CSV files are not included in this repository.
 
 ```mermaid
 erDiagram
@@ -31,7 +30,7 @@ erDiagram
 | `sql/05_statistics.sql` | Median, standard deviation, percentiles, correlation, outliers |
 | `sql/06_subqueries_cte.sql` | Scalar, correlated and nested subqueries, calendar table |
 | `sql/07_joins.sql` | INNER, LEFT, FULL OUTER and CROSS joins |
-| `sql/08_analytical_queries.sql` | 18 analytical tasks with short conclusions and recommendations |
+
 
 Run the scripts in order (01 to 08) in Oracle SQL Developer.
 
@@ -70,7 +69,6 @@ An account-level query on `account_transaction` (2.4 M rows) was measured with `
 - Loan amount is not correlated with interest rate (r = -0.045) or term (r = -0.008).
 - The top 25% of customers produce 61.3% of total spend.
 - 334 of 1,000 customers (33.4%) have no loan.
-- Loan portfolio and risk findings: ___
 
 ## Limitations
 
@@ -79,6 +77,4 @@ An account-level query on `account_transaction` (2.4 M rows) was measured with `
 - Many loans and deposits were opened in 2025, so their history is short.
 - The meaning of `balance` on loan accounts is not documented, so it is not used.
 
-## Dashboard
 
-Power BI dashboard: ___
