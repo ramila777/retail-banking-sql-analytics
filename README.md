@@ -2,6 +2,8 @@
 
 End-to-end SQL analysis of a retail banking dataset in Oracle: data audit, cleaning views, indexing and analytical queries on **2.4 million transactions** (2020-2025).
 
+Source: Kaggle, "Retail Banking Dataset 2020-2025" [(link](https://www.kaggle.com/datasets/subhanu/retail-banking-dataset)). The CSV files are not included in this repository.
+
 ## Dataset
 
 | Table | Rows | Description |
@@ -32,7 +34,7 @@ erDiagram
 | `sql/07_joins.sql` | INNER, LEFT, FULL OUTER and CROSS joins |
 
 
-Run the scripts in order (01 to 08) in Oracle SQL Developer.
+Run the scripts in order (01 to 07) in Oracle SQL Developer.
 
 ## Data audit
 
@@ -64,7 +66,7 @@ An account-level query on `account_transaction` (2.4 M rows) was measured with `
 ## Key findings
 
 - 97.7% of rows are customer activity. Merchant payments are 42.4% of customer transactions, while interbank transfers carry about 75-77% of the spend value each year.
-- Inflows exceed outflows every year (net +6.71 bn over six years). Spend growth is mostly driven by account growth (156 savings accounts at the end of 2020, 1,000 at the end of 2025).
+- Inflows exceed outflows every year (net +6.71 bn over six years). Spend growth closely follows account growth (156 savings accounts at the end of 2020, 1,000 at the end of 2025); after 2022 the spend per account stays roughly flat.
 - Amounts are right-skewed: the mean is about twice the median in every transaction type. The IQR rule flags 7.7% of transactions as outliers, so a fixed high percentile is a better threshold.
 - Loan amount is not correlated with interest rate (r = -0.045) or term (r = -0.008).
 - The top 25% of customers produce 61.3% of total spend.
@@ -72,7 +74,6 @@ An account-level query on `account_transaction` (2.4 M rows) was measured with `
 
 ## Limitations
 
-- "Late" loans are defined from an assumption of monthly payments (expected payments vs. payments made); the data has no delinquency status.
 - Customer segments use total spend and ignore how long the customer has been with the bank.
 - Many loans and deposits were opened in 2025, so their history is short.
 - The meaning of `balance` on loan accounts is not documented, so it is not used.
