@@ -2,7 +2,8 @@
 
 End-to-end SQL analysis of a retail banking dataset in Oracle: data audit, cleaning views, indexing and analytical queries on **2.4 million transactions** (2020-2025).
 
-Source: Kaggle, "Retail Banking Dataset 2020-2025" [(link](https://www.kaggle.com/datasets/subhanu/retail-banking-dataset)). The CSV files are not included in this repository.
+Source: Kaggle, "Retail Banking Dataset 2020-2025" ([link](https://www.kaggle.com/datasets/subhanu/retail-banking-dataset)). The CSV files are not included in this repository.
+
 
 ## Dataset
 
